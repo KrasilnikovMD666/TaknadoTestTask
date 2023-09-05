@@ -9,7 +9,26 @@ services:
     ports:
       - 8000:8000
     command: php -S 0.0.0.0:8000 -t /app
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+
   mysql:
     image: mysql:8
     environment:
       - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABBASE=company_data
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=root
