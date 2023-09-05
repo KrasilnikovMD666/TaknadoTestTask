@@ -13,9 +13,9 @@
 5. phpMyAdmin localhost/8080
 
 База данных подключена в docker, проверить её наличие можно введя команды:
-docker-compose exec mysql bash
-mysql -uroot -proot
-show databases;
+1. docker-compose exec mysql bash
+2. mysql -uroot -proot
+3. show databases;
 имя базы данных company_data
 В случае проблем, файл базы данных находится в папке sql и её можно импортировать через phpMyAdmin
 1. В своём проекте я использовал phpMyAdmin. Необходимо выбрать "Импорт" в верхней панели
